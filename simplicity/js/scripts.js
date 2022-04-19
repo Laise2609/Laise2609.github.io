@@ -46,3 +46,32 @@ botaoLocalizar.addEventListener("click", function (event) {
 
 VMasker(inputCep).maskPattern("99999-999");
 VMasker(inputTelefone).maskPattern("(99) 9999-9999");
+
+/* contador de caracteres - mensagem */
+
+const spanMaximo = formulario.querySelector("#maximo");
+const bCaracteres = formulario.querySelector("#caracteres");
+const textMensagem = formulario.querySelector("#mensagem");
+
+//Detereminar a quantidade máxima de caracteres
+let quantidade = 100;
+
+//Evento para detectar a digitação (entrada) no campo
+textMensagem.addEventListener("input", function(){
+    //Capturando o que foi digitado
+    let conteudo = textMensagem.value;
+
+    //Criando uma contagem regressiva
+    let contagem = quantidade- conteudo.length;
+
+    //Adicionando a contagem ao elemento
+    bCaracteres.textContent = contagem;
+
+    if (contagem == 0) {
+        bCaracteres.style.color = "red";
+        textMensagem.style.boxShadow = "red 0 0 10px"
+    } else {
+       bCaracteres.style.color = "black";
+       textMensagem.style.boxShadow = "black 0 0 10px"
+    }
+});
