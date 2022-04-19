@@ -37,7 +37,7 @@ a {
 h1 a {  
     background-color: red;
     color: white;
-    border-radius: 5px;
+    border-radius: 5px; 
     padding: 0.3rem 1rem;
 }
 
@@ -47,6 +47,7 @@ header {
     top: 0;
     background-color: white; 
     align-items: center;
+    z-index: 1000;
 }
 
 header .limitador {
